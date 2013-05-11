@@ -16,6 +16,8 @@
 		D4FCF660173CB044007E1C22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FCF65F173CB044007E1C22 /* Default.png */; };
 		D4FCF662173CB044007E1C22 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FCF661173CB044007E1C22 /* Default@2x.png */; };
 		D4FCF664173CB044007E1C22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FCF663173CB044007E1C22 /* Default-568h@2x.png */; };
+		D4FCF682173E00CC007E1C22 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCF681173E00CC007E1C22 /* MainViewController.m */; };
+		D4FCF684173E00F0007E1C22 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4FCF683173E00F0007E1C22 /* MainView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		D4FCF65F173CB044007E1C22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D4FCF661173CB044007E1C22 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D4FCF663173CB044007E1C22 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D4FCF680173E00CC007E1C22 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		D4FCF681173E00CC007E1C22 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		D4FCF683173E00F0007E1C22 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = Views/MainView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,8 @@
 		D4FCF653173CB044007E1C22 /* Telemann */ = {
 			isa = PBXGroup;
 			children = (
+				D4FCF67F173E00BB007E1C22 /* Views */,
+				D4FCF67E173E00AD007E1C22 /* Controllers */,
 				D4FCF65C173CB044007E1C22 /* AppDelegate.h */,
 				D4FCF65D173CB044007E1C22 /* AppDelegate.m */,
 				D4FCF654173CB044007E1C22 /* Supporting Files */,
@@ -97,6 +104,23 @@
 				D4FCF663173CB044007E1C22 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4FCF67E173E00AD007E1C22 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCF680173E00CC007E1C22 /* MainViewController.h */,
+				D4FCF681173E00CC007E1C22 /* MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D4FCF67F173E00BB007E1C22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4FCF683173E00F0007E1C22 /* MainView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +178,7 @@
 				D4FCF660173CB044007E1C22 /* Default.png in Resources */,
 				D4FCF662173CB044007E1C22 /* Default@2x.png in Resources */,
 				D4FCF664173CB044007E1C22 /* Default-568h@2x.png in Resources */,
+				D4FCF684173E00F0007E1C22 /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +191,7 @@
 			files = (
 				D4FCF65A173CB044007E1C22 /* main.m in Sources */,
 				D4FCF65E173CB044007E1C22 /* AppDelegate.m in Sources */,
+				D4FCF682173E00CC007E1C22 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +306,7 @@
 				D4FCF669173CB044007E1C22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
