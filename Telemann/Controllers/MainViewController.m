@@ -9,8 +9,11 @@
 #import "MainViewController.h"
 
 @interface MainViewController () {
-    OLSegmentedControl *segmentedControl;
+    OLSegmentedControl *mainSegmentedControl;
     NSArray *mainSegments;
+    
+    OLSegmentedControl *secondarySegmentedControl;
+    NSArray *secondarySegments;
 }
 
 @end
@@ -19,21 +22,32 @@
 
 - (id)init {
     mainSegments = @[@"News", @"Videos"];
+    secondarySegments = @[@"Violin", @"Piano"];
     
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    segmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, 33)];
-    [segmentedControl setItems:mainSegments];
-    [segmentedControl setDelegate:self];
+    mainSegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, 33)];
+    [mainSegmentedControl setItems:mainSegments];
+    [mainSegmentedControl setDelegate:self];
     
-    [view addSubview:segmentedControl];
+    [view addSubview:mainSegmentedControl];
+    
+    secondarySegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2 - 33, view.frame.size.width, 33)];
+    [secondarySegmentedControl setItems:secondarySegments];
+    [secondarySegmentedControl setDelegate:self];
+    
+    [view addSubview:secondarySegmentedControl];
     
     self.view = view;
     return self;
 }
 
 - (void)segmentedControl:(OLSegmentedControl *)segmentedControl selectedSegment:(NSNumber *)segment {
-    NSLog(@"selectedSegment: %@", [mainSegments objectAtIndex:[segment intValue]]);
+    if (segmentedControl == mainSegmentedControl) {
+        NSLog(@"mainSegment: %@", [mainSegments objectAtIndex:[segment intValue]]);
+    } else if (segmentedControl == secondarySegmentedControl) {
+        NSLog(@"secondarySegment: %@", [secondarySegments objectAtIndex:[segment intValue]]);
+    }
 }
 
 @end
