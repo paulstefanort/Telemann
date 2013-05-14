@@ -24,6 +24,8 @@
     mainSegments = @[@"News", @"Videos"];
     secondarySegments = @[@"Violin", @"Piano"];
     
+    UIScrollView *scrollView = [UIScrollView new];
+    
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     mainSegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, 33)];
@@ -38,7 +40,10 @@
     
     [view addSubview:secondarySegmentedControl];
     
-    self.view = view;
+    [scrollView addSubview:view];
+    [scrollView setContentSize:CGSizeMake(0, view.frame.size.height + 1)];
+    
+    self.view = scrollView;
     return self;
 }
 
