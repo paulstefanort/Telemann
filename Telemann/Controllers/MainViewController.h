@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OLSegmentedControl.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <OLSegmentedControlDelegate>
 
 @end

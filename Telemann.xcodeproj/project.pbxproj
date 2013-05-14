@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49B44F71741F0F300B4E953 /* OLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B44F61741F0F300B4E953 /* OLSegmentedControl.m */; };
 		D4FCF64E173CB044007E1C22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF64D173CB044007E1C22 /* UIKit.framework */; };
 		D4FCF650173CB044007E1C22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF64F173CB044007E1C22 /* Foundation.framework */; };
 		D4FCF652173CB044007E1C22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF651173CB044007E1C22 /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D49B44F51741F0F300B4E953 /* OLSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLSegmentedControl.h; path = Controls/OLSegmentedControl.h; sourceTree = "<group>"; };
+		D49B44F61741F0F300B4E953 /* OLSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLSegmentedControl.m; path = Controls/OLSegmentedControl.m; sourceTree = "<group>"; };
 		D4FCF64A173CB044007E1C22 /* Telemann.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telemann.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FCF64D173CB044007E1C22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4FCF64F173CB044007E1C22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D49B44F41741F0CF00B4E953 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				D49B44F51741F0F300B4E953 /* OLSegmentedControl.h */,
+				D49B44F61741F0F300B4E953 /* OLSegmentedControl.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 		D4FCF641173CB044007E1C22 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +93,7 @@
 		D4FCF653173CB044007E1C22 /* Telemann */ = {
 			isa = PBXGroup;
 			children = (
+				D49B44F41741F0CF00B4E953 /* Controls */,
 				D4FCF67F173E00BB007E1C22 /* Views */,
 				D4FCF67E173E00AD007E1C22 /* Controllers */,
 				D4FCF65C173CB044007E1C22 /* AppDelegate.h */,
@@ -188,6 +201,7 @@
 				D4FCF65A173CB044007E1C22 /* main.m in Sources */,
 				D4FCF65E173CB044007E1C22 /* AppDelegate.m in Sources */,
 				D4FCF682173E00CC007E1C22 /* MainViewController.m in Sources */,
+				D49B44F71741F0F300B4E953 /* OLSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
