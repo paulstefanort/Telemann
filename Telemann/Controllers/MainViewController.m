@@ -14,12 +14,10 @@
 
 @implementation MainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+- (id)init {
+    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.view = view;
     return self;
 }
 
