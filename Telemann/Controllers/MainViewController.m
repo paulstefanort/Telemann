@@ -34,11 +34,51 @@
     
     [view addSubview:mainSegmentedControl];
     
+    UIScrollView *newsScrollView = [UIScrollView new];
+    [newsScrollView setFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [newsScrollView setPagingEnabled:true];
+    
+    UIView *newsOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [newsOne setBackgroundColor:[UIColor redColor]];
+    [newsScrollView addSubview:newsOne];
+    
+    UIView *newsTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [newsTwo setBackgroundColor:[UIColor greenColor]];
+    [newsScrollView addSubview:newsTwo];
+    
+    UIView *newsThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [newsThree setBackgroundColor:[UIColor blueColor]];
+    [newsScrollView addSubview:newsThree];
+    
+    [newsScrollView setContentSize:CGSizeMake(view.frame.size.width * 3, 0)];
+    
+    [view addSubview:newsScrollView];
+    
     secondarySegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2 - 33, view.frame.size.width, 33)];
     [secondarySegmentedControl setItems:secondarySegments];
     [secondarySegmentedControl setDelegate:self];
     
     [view addSubview:secondarySegmentedControl];
+    
+    UIScrollView *instrumentScrollView = [UIScrollView new];
+    [instrumentScrollView setFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [instrumentScrollView setPagingEnabled:true];
+    
+    UIView *instrumentOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [instrumentOne setBackgroundColor:[UIColor yellowColor]];
+    [instrumentScrollView addSubview:instrumentOne];
+    
+    UIView *instrumentTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [instrumentTwo setBackgroundColor:[UIColor orangeColor]];
+    [instrumentScrollView addSubview:instrumentTwo];
+    
+    UIView *instrumentThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [instrumentThree setBackgroundColor:[UIColor purpleColor]];
+    [instrumentScrollView addSubview:instrumentThree];
+    
+    [instrumentScrollView setContentSize:CGSizeMake(view.frame.size.width * 3, 0)];
+    
+    [view addSubview:instrumentScrollView];
     
     [scrollView addSubview:view];
     [scrollView setContentSize:CGSizeMake(0, view.frame.size.height + 1)];
