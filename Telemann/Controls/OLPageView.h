@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OLPageView : UIScrollView
+@protocol OLPageViewDelegate;
+
+@interface OLPageView : UIScrollView <UIScrollViewDelegate>
 
 - (void)addPage:(UIView *)page;
+@property id <OLPageViewDelegate> pageViewDelegate;
 
+@end
+
+@protocol OLPageViewDelegate <NSObject>
+@required
+- (void)pageView:(OLPageView *)pageView scrolledToPage:(NSNumber *)page;
 @end

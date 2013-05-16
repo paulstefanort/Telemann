@@ -12,8 +12,12 @@
     OLSegmentedControl *mainSegmentedControl;
     NSArray *mainSegments;
     
+    OLPageView *mainPageView;
+    
     OLSegmentedControl *secondarySegmentedControl;
     NSArray *secondarySegments;
+    
+    OLPageView *secondaryPageView;
 }
 
 @end
@@ -34,7 +38,8 @@
     
     [view addSubview:mainSegmentedControl];
     
-    OLPageView *mainPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    mainPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [mainPageView setPageViewDelegate:self];
     
     UIView *newsOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [newsOne setBackgroundColor:[UIColor redColor]];
@@ -56,7 +61,8 @@
     
     [view addSubview:secondarySegmentedControl];
     
-    OLPageView *secondaryPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    secondaryPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [secondaryPageView setPageViewDelegate:self];
     
     UIView *instrumentOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [instrumentOne setBackgroundColor:[UIColor yellowColor]];
@@ -84,6 +90,18 @@
         NSLog(@"mainSegment: %@", [mainSegments objectAtIndex:[segment intValue]]);
     } else if (segmentedControl == secondarySegmentedControl) {
         NSLog(@"secondarySegment: %@", [secondarySegments objectAtIndex:[segment intValue]]);
+    }
+}
+
+- (void)pageView:(OLPageView *)pageView scrolledToPage:(NSNumber *)page {
+    if (pageView == mainPageView) {
+        if ([page intValue] == 2) {
+            NSLog(@"Scrolled to page three of mainPageView.");
+        }
+    } else if (pageView == secondaryPageView) {
+        if ([page intValue] == 2) {
+            NSLog(@"Scrolled to page three of secondaryPageView.");
+        }
     }
 }
 

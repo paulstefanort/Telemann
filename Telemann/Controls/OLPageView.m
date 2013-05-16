@@ -18,6 +18,7 @@
     if (self) {
         [self setPagingEnabled:true];
         pages = [NSMutableArray new];
+        self.delegate = self;
     }
     return self;
 }
@@ -26,6 +27,11 @@
     [pages addObject:page];
     [self addSubview:page];
     [self setContentSize:CGSizeMake(self.frame.size.width * pages.count, 0)];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int pageNumber = self.contentOffset.x / self.frame.size.width;
+    [self.pageViewDelegate performSelector:@selector(pageView:scrolledToPage:) withObject:self withObject:[NSNumber numberWithInt:pageNumber]];
 }
 
 /*
