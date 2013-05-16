@@ -34,25 +34,21 @@
     
     [view addSubview:mainSegmentedControl];
     
-    UIScrollView *newsScrollView = [UIScrollView new];
-    [newsScrollView setFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
-    [newsScrollView setPagingEnabled:true];
+    OLPageView *mainPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
     
     UIView *newsOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [newsOne setBackgroundColor:[UIColor redColor]];
-    [newsScrollView addSubview:newsOne];
+    [mainPageView addPage:newsOne];
     
     UIView *newsTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [newsTwo setBackgroundColor:[UIColor greenColor]];
-    [newsScrollView addSubview:newsTwo];
+    [mainPageView addPage:newsTwo];
     
     UIView *newsThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [newsThree setBackgroundColor:[UIColor blueColor]];
-    [newsScrollView addSubview:newsThree];
+    [mainPageView addPage:newsThree];
     
-    [newsScrollView setContentSize:CGSizeMake(view.frame.size.width * 3, 0)];
-    
-    [view addSubview:newsScrollView];
+    [view addSubview:mainPageView];
     
     secondarySegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2 - 33, view.frame.size.width, 33)];
     [secondarySegmentedControl setItems:secondarySegments];
@@ -60,25 +56,21 @@
     
     [view addSubview:secondarySegmentedControl];
     
-    UIScrollView *instrumentScrollView = [UIScrollView new];
-    [instrumentScrollView setFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
-    [instrumentScrollView setPagingEnabled:true];
+    OLPageView *secondaryPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
     
     UIView *instrumentOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [instrumentOne setBackgroundColor:[UIColor yellowColor]];
-    [instrumentScrollView addSubview:instrumentOne];
+    [secondaryPageView addPage:instrumentOne];
     
     UIView *instrumentTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [instrumentTwo setBackgroundColor:[UIColor orangeColor]];
-    [instrumentScrollView addSubview:instrumentTwo];
+    [secondaryPageView addPage:instrumentTwo];
     
     UIView *instrumentThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [instrumentThree setBackgroundColor:[UIColor purpleColor]];
-    [instrumentScrollView addSubview:instrumentThree];
+    [secondaryPageView addPage:instrumentThree];
     
-    [instrumentScrollView setContentSize:CGSizeMake(view.frame.size.width * 3, 0)];
-    
-    [view addSubview:instrumentScrollView];
+    [view addSubview:secondaryPageView];
     
     [scrollView addSubview:view];
     [scrollView setContentSize:CGSizeMake(0, view.frame.size.height + 1)];

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OLSegmentedControl.h"
+#import "OLPageView.h"
 
 @interface MainViewController : UIViewController <OLSegmentedControlDelegate>
 
