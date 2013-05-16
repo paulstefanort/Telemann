@@ -53,6 +53,10 @@
     [newsThree setBackgroundColor:[UIColor blueColor]];
     [mainPageView addPage:newsThree];
     
+    UIView *newsFour = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 3, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [newsFour setBackgroundColor:[UIColor lightGrayColor]];
+    [mainPageView addPage:newsFour];
+    
     [view addSubview:mainPageView];
     
     secondarySegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2 - 33, view.frame.size.width, 33)];
@@ -76,6 +80,10 @@
     [instrumentThree setBackgroundColor:[UIColor purpleColor]];
     [secondaryPageView addPage:instrumentThree];
     
+    UIView *instrumentFour = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 3, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [instrumentFour setBackgroundColor:[UIColor grayColor]];
+    [secondaryPageView addPage:instrumentFour];
+    
     [view addSubview:secondaryPageView];
     
     [scrollView addSubview:view];
@@ -87,20 +95,32 @@
 
 - (void)segmentedControl:(OLSegmentedControl *)segmentedControl selectedSegment:(NSNumber *)segment {
     if (segmentedControl == mainSegmentedControl) {
-        NSLog(@"mainSegment: %@", [mainSegments objectAtIndex:[segment intValue]]);
+        if (segment.intValue == 1) {
+            [mainPageView scrollToPage:2];
+        } else if (segment.intValue == 0) {
+            [mainPageView scrollToPage:0];
+        }
     } else if (segmentedControl == secondarySegmentedControl) {
-        NSLog(@"secondarySegment: %@", [secondarySegments objectAtIndex:[segment intValue]]);
+        if (segment.intValue == 1) {
+            [secondaryPageView scrollToPage:2];
+        } else if (segment.intValue == 0) {
+            [secondaryPageView scrollToPage:0];
+        }
     }
 }
 
 - (void)pageView:(OLPageView *)pageView scrolledToPage:(NSNumber *)page {
     if (pageView == mainPageView) {
-        if ([page intValue] == 2) {
-            NSLog(@"Scrolled to page three of mainPageView.");
+        if ([page intValue] == 1) {
+            [mainSegmentedControl setSelectedSegment:0];
+        } else if ([page intValue] == 2) {
+            [mainSegmentedControl setSelectedSegment:1];
         }
     } else if (pageView == secondaryPageView) {
-        if ([page intValue] == 2) {
-            NSLog(@"Scrolled to page three of secondaryPageView.");
+        if ([page intValue] == 1) {
+            [secondarySegmentedControl setSelectedSegment:0];
+        } else if ([page intValue] == 2) {
+            [secondarySegmentedControl setSelectedSegment:1];
         }
     }
 }

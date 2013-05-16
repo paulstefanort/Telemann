@@ -13,6 +13,7 @@
 @interface OLPageView : UIScrollView <UIScrollViewDelegate>
 
 - (void)addPage:(UIView *)page;
+- (BOOL)scrollToPage:(int)page;
 @property id <OLPageViewDelegate> pageViewDelegate;
 
 @end

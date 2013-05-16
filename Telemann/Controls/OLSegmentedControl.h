@@ -13,6 +13,7 @@
 @interface OLSegmentedControl : UIView
 
 - (void)setItems:(NSArray *)newItems;
+- (BOOL)setSelectedSegment:(int)segment;
 @property id <OLSegmentedControlDelegate> delegate;
 
 @end

@@ -29,6 +29,19 @@
     [self setContentSize:CGSizeMake(self.frame.size.width * pages.count, 0)];
 }
 
+- (BOOL)scrollToPage:(int)page {
+    if (page < pages.count) {
+        [self setContentOffset:CGPointMake(self.frame.size.width * page, 0) animated:true];
+        return true;
+    }
+    return false;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    int pageNumber = self.contentOffset.x / self.frame.size.width;
+    [self.pageViewDelegate performSelector:@selector(pageView:scrolledToPage:) withObject:self withObject:[NSNumber numberWithInt:pageNumber]];
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int pageNumber = self.contentOffset.x / self.frame.size.width;
     [self.pageViewDelegate performSelector:@selector(pageView:scrolledToPage:) withObject:self withObject:[NSNumber numberWithInt:pageNumber]];

@@ -52,6 +52,15 @@
     }
 }
 
+- (BOOL)setSelectedSegment:(int)segment {
+    if (segment < items.count) {
+        currentSegmentIndex = segment;
+        [self layoutSubviews];
+        return true;
+    }
+    return false;
+}
+
 - (void)layoutSubviews {
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
