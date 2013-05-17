@@ -23,6 +23,11 @@
     return self;
 }
 
+- (UIView *)newPage {
+    UIView *page = [[UIView alloc] initWithFrame:CGRectMake(pages.count * self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
+    return page;
+}
+
 - (void)addPage:(UIView *)page {
     [pages addObject:page];
     [self addSubview:page];

@@ -41,19 +41,19 @@
     mainPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [mainPageView setPageViewDelegate:self];
     
-    UIView *newsOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *newsOne = [mainPageView newPage];
     [newsOne setBackgroundColor:[UIColor redColor]];
     [mainPageView addPage:newsOne];
     
-    UIView *newsTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *newsTwo = [mainPageView newPage];
     [newsTwo setBackgroundColor:[UIColor greenColor]];
     [mainPageView addPage:newsTwo];
     
-    UIView *newsThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *newsThree = [mainPageView newPage];
     [newsThree setBackgroundColor:[UIColor blueColor]];
     [mainPageView addPage:newsThree];
     
-    UIView *newsFour = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 3, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *newsFour = [mainPageView newPage];
     [newsFour setBackgroundColor:[UIColor lightGrayColor]];
     [mainPageView addPage:newsFour];
     
@@ -68,19 +68,19 @@
     secondaryPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2 - 66)];
     [secondaryPageView setPageViewDelegate:self];
     
-    UIView *instrumentOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *instrumentOne = [secondaryPageView newPage];
     [instrumentOne setBackgroundColor:[UIColor yellowColor]];
     [secondaryPageView addPage:instrumentOne];
     
-    UIView *instrumentTwo = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *instrumentTwo = [secondaryPageView newPage];
     [instrumentTwo setBackgroundColor:[UIColor orangeColor]];
     [secondaryPageView addPage:instrumentTwo];
     
-    UIView *instrumentThree = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 2, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *instrumentThree = [secondaryPageView newPage];
     [instrumentThree setBackgroundColor:[UIColor purpleColor]];
     [secondaryPageView addPage:instrumentThree];
     
-    UIView *instrumentFour = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width * 3, 0, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    UIView *instrumentFour = [secondaryPageView newPage];
     [instrumentFour setBackgroundColor:[UIColor grayColor]];
     [secondaryPageView addPage:instrumentFour];
     
