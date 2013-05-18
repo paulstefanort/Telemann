@@ -12,6 +12,6 @@
 #import "OLPage.h"
 #import "OLNewsPage.h"
 
-@interface MainViewController : UIViewController <OLSegmentedControlDelegate, OLPageViewDelegate, OLNewsPageDelegate>
+@interface MainViewController : UIViewController <UIScrollViewDelegate, OLSegmentedControlDelegate, OLPageViewDelegate, OLNewsPageDelegate>
 
 @end
