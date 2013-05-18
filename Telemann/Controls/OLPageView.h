@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OLPage.h"
 
 @protocol OLPageViewDelegate;
 
 @interface OLPageView : UIScrollView <UIScrollViewDelegate>
 
-- (UIView *)newPage;
-- (void)addPage:(UIView *)page;
+- (OLPage *)newPage;
+- (void)addPage:(OLPage *)page;
 - (BOOL)scrollToPage:(int)page;
 @property id <OLPageViewDelegate> pageViewDelegate;
 

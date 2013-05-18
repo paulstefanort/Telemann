@@ -23,12 +23,12 @@
     return self;
 }
 
-- (UIView *)newPage {
-    UIView *page = [[UIView alloc] initWithFrame:CGRectMake(pages.count * self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
+- (OLPage *)newPage {
+    OLPage *page = [[OLPage alloc] initWithFrame:CGRectMake(pages.count * self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
     return page;
 }
 
-- (void)addPage:(UIView *)page {
+- (void)addPage:(OLPage *)page {
     [pages addObject:page];
     [self addSubview:page];
     [self setContentSize:CGSizeMake(self.frame.size.width * pages.count, 0)];
