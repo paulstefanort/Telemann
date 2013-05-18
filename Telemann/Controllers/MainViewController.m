@@ -39,22 +39,27 @@
     [view addSubview:mainSegmentedControl];
     
     mainPageView = [[OLPageView alloc] initWithFrame:CGRectMake(0, 33, view.frame.size.width, view.frame.size.height / 2 - 66)];
+    [mainPageView setBackgroundColor:[UIColor whiteColor]];
     [mainPageView setPageViewDelegate:self];
     
-    OLPage *newsOne = [mainPageView newPage];
-    [newsOne setBackgroundColor:[UIColor redColor]];
+    OLNewsPage *newsOne = [[OLNewsPage alloc] initWithFrame:[mainPageView newPage].frame];
+    newsOne.titleLabel.text = @"News One";
+    newsOne.newsPageDelegate = self;
     [mainPageView addPage:newsOne];
     
-    OLPage *newsTwo = [mainPageView newPage];
-    [newsTwo setBackgroundColor:[UIColor greenColor]];
+    OLNewsPage *newsTwo = [[OLNewsPage alloc] initWithFrame:[mainPageView newPage].frame];
+    newsTwo.titleLabel.text = @"News Two";
+    newsTwo.newsPageDelegate = self;
     [mainPageView addPage:newsTwo];
     
-    OLPage *newsThree = [mainPageView newPage];
-    [newsThree setBackgroundColor:[UIColor blueColor]];
+    OLNewsPage *newsThree = [[OLNewsPage alloc] initWithFrame:[mainPageView newPage].frame];
+    newsThree.titleLabel.text = @"News Three";
+    newsThree.newsPageDelegate = self;
     [mainPageView addPage:newsThree];
     
-    OLPage *newsFour = [mainPageView newPage];
-    [newsFour setBackgroundColor:[UIColor lightGrayColor]];
+    OLNewsPage *newsFour = [[OLNewsPage alloc] initWithFrame:[mainPageView newPage].frame];
+    newsFour.titleLabel.text = @"News Four";
+    newsFour.newsPageDelegate = self;
     [mainPageView addPage:newsFour];
     
     [view addSubview:mainPageView];
@@ -123,6 +128,10 @@
             [secondarySegmentedControl setSelectedSegment:1];
         }
     }
+}
+
+- (void)newsPageImagePressed:(OLNewsPage *)newsPage {
+    NSLog(@"newsPageImagePressed");
 }
 
 @end

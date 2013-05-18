@@ -10,7 +10,8 @@
 #import "OLSegmentedControl.h"
 #import "OLPageView.h"
 #import "OLPage.h"
+#import "OLNewsPage.h"
 
-@interface MainViewController : UIViewController <OLSegmentedControlDelegate, OLPageViewDelegate>
+@interface MainViewController : UIViewController <OLSegmentedControlDelegate, OLPageViewDelegate, OLNewsPageDelegate>
 
 @end

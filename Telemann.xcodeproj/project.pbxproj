@@ -10,6 +10,7 @@
 		D41023F917448FC300F1CA55 /* OLPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D41023F817448FC300F1CA55 /* OLPageView.m */; };
 		D49B44F71741F0F300B4E953 /* OLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B44F61741F0F300B4E953 /* OLSegmentedControl.m */; };
 		D4AD519817472655005E05B5 /* OLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD519717472655005E05B5 /* OLPage.m */; };
+		D4AD519B1747277D005E05B5 /* OLNewsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD519A1747277D005E05B5 /* OLNewsPage.m */; };
 		D4FCF64E173CB044007E1C22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF64D173CB044007E1C22 /* UIKit.framework */; };
 		D4FCF650173CB044007E1C22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF64F173CB044007E1C22 /* Foundation.framework */; };
 		D4FCF652173CB044007E1C22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FCF651173CB044007E1C22 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 		D49B44F61741F0F300B4E953 /* OLSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLSegmentedControl.m; path = Controls/OLSegmentedControl.m; sourceTree = "<group>"; };
 		D4AD519617472655005E05B5 /* OLPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLPage.h; path = Controls/OLPage.h; sourceTree = "<group>"; };
 		D4AD519717472655005E05B5 /* OLPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLPage.m; path = Controls/OLPage.m; sourceTree = "<group>"; };
+		D4AD51991747277D005E05B5 /* OLNewsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLNewsPage.h; path = Controls/OLNewsPage.h; sourceTree = "<group>"; };
+		D4AD519A1747277D005E05B5 /* OLNewsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLNewsPage.m; path = Controls/OLNewsPage.m; sourceTree = "<group>"; };
 		D4FCF64A173CB044007E1C22 /* Telemann.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telemann.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FCF64D173CB044007E1C22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4FCF64F173CB044007E1C22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +72,8 @@
 				D41023F817448FC300F1CA55 /* OLPageView.m */,
 				D4AD519617472655005E05B5 /* OLPage.h */,
 				D4AD519717472655005E05B5 /* OLPage.m */,
+				D4AD51991747277D005E05B5 /* OLNewsPage.h */,
+				D4AD519A1747277D005E05B5 /* OLNewsPage.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				D49B44F71741F0F300B4E953 /* OLSegmentedControl.m in Sources */,
 				D41023F917448FC300F1CA55 /* OLPageView.m in Sources */,
 				D4AD519817472655005E05B5 /* OLPage.m in Sources */,
+				D4AD519B1747277D005E05B5 /* OLNewsPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
