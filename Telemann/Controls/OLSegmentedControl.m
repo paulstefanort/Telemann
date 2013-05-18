@@ -8,6 +8,8 @@
 
 #import "OLSegmentedControl.h"
 
+#define LINE_VIEW_HEIGHT 1
+
 @interface OLSegmentedControl() {
     NSArray *items;
     int segmentCount;
@@ -76,10 +78,12 @@
         
         UILabel *segmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, segmentFrame.size.width - 10, segmentFrame.size.height)];
         [segmentLabel setFont:[UIFont boldSystemFontOfSize:segmentFrame.size.height / 2]];
+        [segmentLabel setShadowColor:[UIColor lightGrayColor]];
+        [segmentLabel setShadowOffset:CGSizeMake(0, -1)];
         [segmentLabel setBackgroundColor:[UIColor clearColor]];
         
         if (currentSegmentIndex == i) {
-            [segment setBackgroundColor:[UIColor brownColor]];
+            [segment setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.1]];
         } else {
             [segment setBackgroundColor:[UIColor clearColor]];
         }
@@ -89,6 +93,14 @@
         
         [self addSubview:segment];
     }
+    
+    UIView *headerLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, LINE_VIEW_HEIGHT)];
+    [headerLineView setBackgroundColor:[UIColor blackColor]];
+    [self addSubview:headerLineView];
+    
+    UIView *footerLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - LINE_VIEW_HEIGHT, self.frame.size.width, LINE_VIEW_HEIGHT)];
+    [footerLineView setBackgroundColor:[UIColor blackColor]];
+    [self addSubview:footerLineView];
 }
 
 /*
