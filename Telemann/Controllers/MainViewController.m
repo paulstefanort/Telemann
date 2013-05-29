@@ -33,9 +33,6 @@
     
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, -44, 320, 44)];
-    [scrollView addSubview:searchBar];
-    
     mainSegmentedControl = [[OLSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, 33)];
     [mainSegmentedControl setItems:mainSegments];
     [mainSegmentedControl setDelegate:self];
@@ -136,22 +133,6 @@
 
 - (void)newsPageImagePressed:(OLNewsPage *)newsPage {
     NSLog(@"newsPageImagePressed");
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < -44) {
-        [scrollView setContentInset:UIEdgeInsetsMake(44, 0, 0, 0)];
-    } else if (scrollView.contentOffset.y > 10) {
-        [scrollView setContentInset:UIEdgeInsetsZero];
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (scrollView.contentOffset.y < -44) {
-        [scrollView setContentInset:UIEdgeInsetsMake(44, 0, 0, 0)];
-    } else {
-        [scrollView setContentInset:UIEdgeInsetsZero];
-    }
 }
 
 @end
